@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Reveal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Shared keyframes for moving the mask from start to end */
+      @keyframes mask-play {
+        from {
+          -webkit-mask-position: 0 0;
+          mask-position: 0 0;
+        }
+        to {
+          -webkit-mask-position: 100% 0;
+          mask-position: 100% 0;
+        }
+      }
+
+      /* --- Paint Reveal Mask Settings --- 
+         Source: Local (images/video-clip-mask.png)
+         Frames: 23 (Standard file has 20 frames)
+         Calculation: 20 * 100% = 2000% width
+         Steps: 23 - 1 = 22
+      */
+      .mask-right-base {
+        -webkit-mask-image: url('images/video-clip-mask.png');
+        mask-image: url('images/video-clip-mask.png');
+        -webkit-mask-size: 2000% 100%;
+        mask-size: 2000% 100%;
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+      }
+      .animate-right {
+        animation: mask-play 1.4s steps(19) forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

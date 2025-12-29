@@ -1,0 +1,5 @@
+{
+  "name": "Image Reveal",
+  "description": "An aesthetic image reveal animation using sprite-sheet masking techniques.",
+  "requestFramePermissions": []
+}
